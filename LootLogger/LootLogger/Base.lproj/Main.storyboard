@@ -16,37 +16,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Oqh-wt-ogU">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPj-bG-DPq">
-                                    <rect key="frame" x="8" y="7" width="195" height="30"/>
+                                    <rect key="frame" x="8" y="0.0" width="195" height="30"/>
                                     <state key="normal" title="Edit"/>
                                     <connections>
                                         <action selector="toggleEditingMode:" destination="hAl-qL-YDm" eventType="touchUpInside" id="Zax-5C-2Af"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JV-NO-8nX">
-                                    <rect key="frame" x="211" y="7" width="195" height="30"/>
+                                    <rect key="frame" x="211" y="0.0" width="195" height="30"/>
                                     <state key="normal" title="Add"/>
                                     <connections>
                                         <action selector="addNewItem:" destination="hAl-qL-YDm" eventType="touchUpInside" id="F4v-v7-1Mx"/>
                                     </connections>
                                 </button>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qw9-rG-YPc">
+                                    <rect key="frame" x="141.5" y="40" width="131" height="32"/>
+                                    <segments>
+                                        <segment title="First"/>
+                                        <segment title="Second"/>
+                                    </segments>
+                                </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Qw9-rG-YPc" secondAttribute="bottom" constant="10" id="1pL-Dn-KZS"/>
+                                <constraint firstAttribute="bottom" secondItem="Qw9-rG-YPc" secondAttribute="bottom" constant="10" id="5yW-4t-fCQ"/>
+                                <constraint firstItem="Qw9-rG-YPc" firstAttribute="centerX" secondItem="Oqh-wt-ogU" secondAttribute="centerX" id="65Z-B6-FKg"/>
                                 <constraint firstItem="7JV-NO-8nX" firstAttribute="leading" secondItem="NPj-bG-DPq" secondAttribute="trailing" constant="8" id="BFp-rS-jDM"/>
                                 <constraint firstItem="NPj-bG-DPq" firstAttribute="leading" secondItem="Oqh-wt-ogU" secondAttribute="leading" constant="8" id="Cek-iB-d6x"/>
                                 <constraint firstAttribute="trailing" secondItem="7JV-NO-8nX" secondAttribute="trailing" constant="8" id="Ony-y2-ArC"/>
-                                <constraint firstItem="7JV-NO-8nX" firstAttribute="centerY" secondItem="Oqh-wt-ogU" secondAttribute="centerY" id="cTN-G8-wuI"/>
                                 <constraint firstItem="7JV-NO-8nX" firstAttribute="width" secondItem="NPj-bG-DPq" secondAttribute="width" id="eAY-Xa-oeU"/>
-                                <constraint firstItem="NPj-bG-DPq" firstAttribute="centerY" secondItem="Oqh-wt-ogU" secondAttribute="centerY" id="gEL-Y1-jPw"/>
+                                <constraint firstItem="7JV-NO-8nX" firstAttribute="centerY" secondItem="NPj-bG-DPq" secondAttribute="centerY" id="ehx-jo-bOQ"/>
+                                <constraint firstItem="Qw9-rG-YPc" firstAttribute="top" secondItem="NPj-bG-DPq" secondAttribute="bottom" constant="10" id="rD3-sc-eO3"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="Sqo-Cn-2Nn" detailTextLabel="Aer-Ve-Mb3" style="IBUITableViewCellStyleValue1" id="9CI-TV-1Zz">
-                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="109" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9CI-TV-1Zz" id="2C9-K6-Tq6">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -75,10 +85,13 @@
                             <outlet property="delegate" destination="hAl-qL-YDm" id="piQ-gT-2OW"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Qw9-rG-YPc" id="MiE-Pu-se5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2vr-a9-YF9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-348" y="78"/>
+            <point key="canvasLocation" x="-349.27536231884062" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>
